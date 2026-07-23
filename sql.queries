@@ -1,0 +1,86 @@
+-- ==========================================
+-- SMARTCARE HOSPITAL MANAGEMENT SYSTEM
+-- BASIC SQL QUERIES
+-- ==========================================
+
+-- 1. Show all patients
+
+SELECT * FROM Patients;
+
+
+-- 2. Show patient names only
+
+SELECT first_name, last_name
+FROM Patients;
+
+
+-- 3. Show patient first name and blood group
+
+SELECT first_name, blood_group
+FROM Patients;
+
+
+-- 4. Show all doctors
+
+SELECT * FROM Doctors;
+
+
+-- 5. Show doctor name and specialization
+
+SELECT first_name, last_name, specialisation
+FROM Doctors;
+
+
+-- 6. Show only female patients
+
+SELECT *
+FROM Patients
+WHERE gender='Female';
+
+
+-- 7. Show only male patients
+
+SELECT *
+FROM Patients
+WHERE gender='Male';
+
+
+-- 8. Show doctors from Department 3
+
+SELECT *
+FROM Doctors
+WHERE department_id=3;
+
+
+-- 9. Arrange patients alphabetically
+
+SELECT *
+FROM Patients
+ORDER BY first_name ASC;
+
+
+-- 10. Arrange doctors by last name
+
+SELECT *
+FROM Doctors
+ORDER BY last_name ASC;
+
+
+-- 11. Show first three patients
+
+SELECT *
+FROM Patients
+LIMIT 3;
+
+
+-- 12. Show first five doctors
+
+SELECT *
+FROM Doctors
+LIMIT 5;
+
+
+-- 13. Show unique blood groups
+
+SELECT DISTINCT blood_group
+FROM Patients;
