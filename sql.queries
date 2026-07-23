@@ -84,3 +84,74 @@ LIMIT 5;
 
 SELECT DISTINCT blood_group
 FROM Patients;
+-- ==========================================
+-- INNER JOIN QUERIES
+-- ==========================================
+
+-- 14. Show patient name and doctor ID
+
+SELECT
+Patients.first_name,
+Doctors.doctor_id
+
+FROM Appointments
+
+INNER JOIN Patients
+ON Appointments.patient_id = Patients.patient_id
+
+INNER JOIN Doctors
+ON Appointments.doctor_id = Doctors.doctor_id;
+
+
+-- 15. Show patient name, doctor name and appointment date
+
+SELECT
+
+Patients.first_name AS Patient,
+
+Doctors.first_name AS Doctor,
+
+Appointments.appointment_date
+
+FROM Appointments
+
+INNER JOIN Patients
+ON Appointments.patient_id = Patients.patient_id
+
+INNER JOIN Doctors
+ON Appointments.doctor_id = Doctors.doctor_id;
+
+
+-- 16. Show patient name, doctor name, appointment date and time
+
+SELECT
+
+Patients.first_name AS Patient,
+
+Doctors.first_name AS Doctor,
+
+Appointments.appointment_date,
+
+Appointments.appointment_time
+
+FROM Appointments
+
+INNER JOIN Patients
+ON Appointments.patient_id = Patients.patient_id
+
+INNER JOIN Doctors
+ON Appointments.doctor_id = Doctors.doctor_id;
+
+
+-- 17. Show doctor name with department name
+
+SELECT
+
+Doctors.first_name,
+
+Departments.department_name
+
+FROM Doctors
+
+INNER JOIN Departments
+ON Doctors.department_id = Departments.department_id;
